@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export default class Forms extends Component {
+export default class Form extends Component {
   render() {
     const {
       cardName,
@@ -138,7 +138,7 @@ export default class Forms extends Component {
   }
 }
 
-Forms.propTypes = {
+Form.propTypes = {
   cardName: PropTypes.string.isRequired,
   cardDescription: PropTypes.string.isRequired,
   cardAttr1: PropTypes.string.isRequired,
