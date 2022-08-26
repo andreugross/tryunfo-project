@@ -68,7 +68,7 @@ class App extends React.Component {
     const validateAllMin = this.handleValidateAllMin(cardAttr1, cardAttr2, cardAttr3);
 
     const allValidate = validateIsEmpty && validateSum
-    && validateAllMax && validateAllMin;
+      && validateAllMax && validateAllMin;
 
     this.setState({
       isSaveButtonDisabled: !allValidate,
@@ -98,6 +98,7 @@ class App extends React.Component {
 
   render() {
     const {
+      cardsDeck,
       cardName,
       cardDescription,
       cardAttr1,
@@ -136,6 +137,20 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
         />
+        {
+          cardsDeck.map((element) => (
+            <Card
+              key={ element.cardName }
+              cardName={ element.cardName }
+              cardDescription={ element.cardDescription }
+              cardAttr1={ element.cardAttr1 }
+              cardAttr2={ element.cardAttr2 }
+              cardAttr3={ element.cardAttr3 }
+              cardImage={ element.cardImage }
+              cardRare={ element.cardRare }
+              cardTrunfo={ element.cardTrunfo }
+            />))
+        }
       </div>
     );
   }
